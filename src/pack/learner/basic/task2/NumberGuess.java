@@ -1,32 +1,45 @@
 package pack.learner.basic.task2;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class NumberGuess {
     public static void main(String[] args){
+//        Generating the random number between 1 and 20.
         Random random = new Random();
         int randomNumber = random.nextInt(20) + 1;
-        System.out.println(randomNumber);
 
+//        Initializing number of attempts and won
         int attempts = 1;
         boolean hasWon = false;
 
-        while(attempts <= 5){
-            Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-            System.out.print("""
+//        This
+        while(attempts <= 5){
+            try{
+
+                System.out.print("""
                 ----------Guessing Game----------
                 ---------------------------------
                 """);
-            System.out.print("Guess the number: ");
-            int guessed_num = input.nextInt();
+                System.out.print("Guess the number: ");
+                int guessed_num = input.nextInt();
+                if (guessed_num < 0 || guessed_num > 20){
+                    System.out.println("Error: 1 to 20 Integers only.");
+                    continue;
+                }
 
-            hasWon = result(guessed_num, randomNumber);
-            if(hasWon){
-                break;
+                hasWon = result(guessed_num, randomNumber);
+                if(hasWon){
+                    break;
+                }
+                attempts++;
+            }catch (InputMismatchException e){
+                System.out.println("Error: 1 to 20 Integers only.");
+                input.nextLine();
             }
-            attempts++;
         }
         if (!hasWon){
             System.out.println("---------------------------------");
@@ -48,11 +61,5 @@ public class NumberGuess {
         }
 
         return false;
-    }
-
-    public static void validateInput(int number){
-        if (number < 0 || number > 20){
-            System.out.println("Invalid Inp");
-        }
     }
 }
