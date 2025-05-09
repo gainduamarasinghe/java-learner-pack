@@ -12,20 +12,23 @@ public class Factorial {
         -----Factorial Calculator-----
         ------------------------------
         """);
-
+//        program runs until user input exit.
         while(true){
             try{
-
+//                get the input from user.
                 System.out.print("Enter positive integer ('exit' to quit): ");
                 String user_input = input.next();
 
+//                check whether user input as exit, then quit the program.
                 if (user_input.equalsIgnoreCase("exit")){
                     System.out.println("Exiting program. Bye!");
                     break;
                 }
 
+//                Make string to the integer using parseInt method in Integer class.
                 int number = Integer.parseInt(user_input);
 
+//                validate the input and call the output.
                 if(number < 0){
                     System.out.println("Factorial is not defined for Negative Integers.");
                 }else{
@@ -35,6 +38,7 @@ public class Factorial {
                     System.out.println("Answer: " + path + " = " + result);
                 }
             }catch (InputMismatchException e){
+//                handling input errors.
                 System.out.println("Error: Enter only Integers");
             }
 
@@ -42,6 +46,7 @@ public class Factorial {
 
     }
 
+//    Recursive Method to calculate the Factorial.
     public static int calculateFactorial(int number){
         if (number == 0 || number == 1){
             return 1;
@@ -50,6 +55,7 @@ public class Factorial {
         }
     }
 
+//    Recursive Method to print the path.
     public static String pathOfFactorial(int number){
         if (number == 0 || number == 1){
             return "1";
