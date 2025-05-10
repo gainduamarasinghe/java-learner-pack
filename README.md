@@ -1,43 +1,28 @@
 # 🧮 Java Console Projects
 
+A collection of beginner-friendly Java console applications written in Java to practice user input, control structures, and recursion.
+
+---
+
 ## ✅ Task 1: Basic Calculator
 
-**Objective:**  
-Create a Java program that works as a simple calculator in the console.
-
-### Requirements:
-- Ask the user to input:
-  - First number
-  - Operator (`+`, `-`, `*`, `/`, or `exit`)
-  - Second number
-- Use `switch-case` to perform the correct operation
-- Repeat until user types `exit` as the operator
-- Handle:
-  - Invalid number input using `try-catch`
-  - Division by zero using `try-catch`
-- Use separate `static` methods for each operation
+A simple calculator that performs addition, subtraction, multiplication, and division based on user input.  
+Runs continuously until the user types `exit`.
 
 ---
 
 ## ✅ Task 2: Number Guessing Game
 
-**Objective:**  
-Create a Java console application where the user tries to guess a randomly generated number.
+The program generates a random number between 1 and 20.  
+The user gets 5 attempts to guess the number correctly with hints after each try.
 
-### Requirements:
-- Generate a random number between **1 and 20**
-- Ask the user to guess the number
-- Allow a **maximum of 5 attempts**
-- Provide feedback for each guess:
-  - “Too high”
-  - “Too low”
-  - “You won” (if guessed correctly)
-- After 5 unsuccessful attempts, display:
-  - “Your attempts over.”
-  - “Correct answer: [number]”
-- Use `try-catch` to:
-  - Handle non-integer inputs (`InputMismatchException`)
-  - Avoid program crashes on invalid input
-- Use input validation to:
-  - Ensure the guess is between **1 and 20**
-- Use a separate `static` method `result(int guess, int rand)` to check the guess
+---
+
+## ✅ Task 3: Factorial Calculator
+
+Calculates the factorial of a positive integer using recursion.  
+Also prints the full multiplication path (e.g., `5 x 4 x 3 x 2 x 1 = 120`).  
+Supports exit option with `'exit'`.
+
+---
+
